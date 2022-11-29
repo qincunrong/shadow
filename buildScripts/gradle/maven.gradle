@@ -463,7 +463,17 @@ publishing {
                 url "https://maven.pkg.github.com/" + "${System.env.GITHUB_REPOSITORY}".toLowerCase()
             }
         } else {
-            mavenLocal()
+//            mavenLocal()
+            maven {
+                name = "YstMaven"
+                credentials {
+                    username = "DEV"
+                    password = "DEV@2019"
+                }
+                allowInsecureProtocol true
+                url "http://192.168.48.13:8081/repository/maven-snapshots/"
+//                url "http://maven.aliyun.com/nexus/content/groups/public"
+            }
         }
     }
 }
